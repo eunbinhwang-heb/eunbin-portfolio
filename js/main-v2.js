@@ -93,6 +93,29 @@
 		if (toRotate) new TxtRotate(el, JSON.parse(toRotate), period);
 	});
 
+	/* Project filter ------------------------------------------------------- */
+	var filterChips = document.querySelectorAll('.filter-chip');
+	var projectCards = document.querySelectorAll('.project-card[data-group]');
+	if (filterChips.length && projectCards.length) {
+		filterChips.forEach(function (chip) {
+			chip.addEventListener('click', function () {
+				var filter = chip.getAttribute('data-filter');
+
+				filterChips.forEach(function (c) { c.classList.remove('active'); });
+				chip.classList.add('active');
+
+				projectCards.forEach(function (card) {
+					if (filter === 'all') {
+						card.classList.remove('dimmed');
+						return;
+					}
+					var groups = (card.getAttribute('data-group') || '').split(' ');
+					card.classList.toggle('dimmed', groups.indexOf(filter) === -1);
+				});
+			});
+		});
+	}
+
 	/* Award certificate modal -------------------------------------------------*/
 	var awardModal = document.getElementById('awardModal');
 	if (awardModal) {

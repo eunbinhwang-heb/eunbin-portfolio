@@ -505,6 +505,22 @@ section { position: relative; padding: 110px 0; }
 .chip::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-3); }
 
 /* Projects -------------------------------------------------------------- */
+.project-filter { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+.filter-chip {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 1px solid var(--border-strong);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+}
+.filter-chip:hover { border-color: var(--accent-soft-border); color: var(--text); }
+.filter-chip.active { background: var(--gradient); border-color: transparent; color: #ffffff; box-shadow: 0 10px 22px -10px rgba(109, 40, 217, 0.45); }
+
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .project-card {
   position: relative;
@@ -514,8 +530,10 @@ section { position: relative; padding: 110px 0; }
   padding: 26px 26px 24px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, opacity .3s ease, filter .3s ease;
 }
+.project-card.dimmed { opacity: 0.32 !important; filter: grayscale(0.4); transform: scale(0.98) !important; order: 1; }
+.project-card.dimmed:hover { opacity: 0.55 !important; }
 .project-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 3px;
