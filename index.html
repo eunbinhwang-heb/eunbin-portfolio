@@ -11,7 +11,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/aos.css">
-	<link rel="stylesheet" href="css/style-v2.css?v=8">
+	<link rel="stylesheet" href="css/style-v2.css?v=9">
 </head>
 
 <body>
@@ -348,14 +348,14 @@
 					<h3><a href="#" target="_blank">마이크로웨이브 센서를 이용한 단층촬영(Tomography) 구현</a></h3>
 					<span class="project-org">학사학위 공동논문 · 3인 팀 프로젝트</span>
 					<div class="award-badges">
-						<a href="#" target="_blank" class="award-badge" title="상장 보기">
+						<button type="button" class="award-badge" data-award-img="images/awards/tomography-oe.jpg" data-award-title="마이크로웨이브 단층촬영 — 교외 은상">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
 							교외 은상
-						</a>
-						<a href="#" target="_blank" class="award-badge" title="상장 보기">
+						</button>
+						<button type="button" class="award-badge" data-award-img="images/awards/tomography-inschool.jpg" data-award-title="마이크로웨이브 단층촬영 — 교내 우수상">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
 							교내 우수상
-						</a>
+						</button>
 					</div>
 					<p>24GHz 도플러 센서의 투과 감쇠 신호를 증폭·복조하고 Sinogram 및 Back-projection으로
 						단층 영상을 재구성했습니다. 광대역 증폭기·복조 회로 및 노이즈 제거 설계를 담당했습니다.</p>
@@ -413,8 +413,23 @@
 		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
 	</button>
 
+	<div class="award-modal" id="awardModal" aria-hidden="true">
+		<div class="award-modal-backdrop" data-award-close></div>
+		<div class="award-modal-content" role="dialog" aria-modal="true">
+			<button type="button" class="award-modal-close" data-award-close aria-label="닫기">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+			</button>
+			<img class="award-modal-img" src="" alt="상장">
+			<div class="award-modal-placeholder">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+				<span>상장 이미지를 준비 중입니다</span>
+			</div>
+			<p class="award-modal-title"></p>
+		</div>
+	</div>
+
 	<script src="js/aos.js"></script>
-	<script src="js/main-v2.js?v=2"></script>
+	<script src="js/main-v2.js?v=3"></script>
 	<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
