@@ -552,6 +552,24 @@ section { position: relative; padding: 110px 0; }
 .project-card h3 { font-size: 19px; line-height: 1.4; margin-bottom: 8px; color: var(--text); }
 .project-card h3 a:hover { color: var(--accent); }
 .project-org { display: block; font-size: 13px; color: var(--accent-3); font-weight: 600; margin-bottom: 12px; }
+
+.award-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.award-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px 6px 10px;
+  border-radius: 999px;
+  background: rgba(180, 83, 9, 0.09);
+  border: 1px solid rgba(180, 83, 9, 0.28);
+  color: var(--accent-warn);
+  transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.award-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+.award-badge:hover { background: var(--accent-warn); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 16px -8px rgba(180, 83, 9, 0.5); }
+
 .project-card > p { color: var(--text-dim); font-size: 14.3px; margin-bottom: 18px; }
 
 .project-tags { display: flex; flex-wrap: wrap; gap: 7px; }
