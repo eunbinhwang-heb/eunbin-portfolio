@@ -349,6 +349,7 @@ section { position: relative; padding: 110px 0; }
   border-radius: var(--radius);
   padding: 22px 26px;
   box-shadow: var(--shadow-md);
+  margin-top: 250px;
 }
 
 .info-list li {
